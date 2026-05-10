@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -18,7 +19,13 @@
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
  */
 
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
 @theme inline {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --color-pandora-pink: var(--pandora-pink);
+  --color-pandora-pink-soft: var(--pandora-pink-soft);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,9 +69,14 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.125rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.18 0.005 285);
+  --pandora-pink: oklch(0.82 0.11 15);
+  --pandora-pink-soft: oklch(0.88 0.08 15);
+  --color-pandora-pink: var(--pandora-pink);
+  --color-pandora-pink-soft: var(--pandora-pink-soft);
+  --font-display: "Cormorant Garamond", Georgia, serif;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
