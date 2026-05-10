@@ -108,9 +108,6 @@ function PulserasPage() {
         </div>
       </section>
 
-      {/* Tabs */}
-      <Tabs />
-
       {/* Filter bar */}
       <div className="border-b border-border">
         <div className="max-w-[1600px] mx-auto px-6 py-4 flex items-center justify-between text-xs tracking-widest">
