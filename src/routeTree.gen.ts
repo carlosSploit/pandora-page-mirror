@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PulserasRouteImport } from './routes/pulseras'
+import { Route as CharmsRouteImport } from './routes/charms'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PulserasRoute = PulserasRouteImport.update({
   id: '/pulseras',
   path: '/pulseras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CharmsRoute = CharmsRouteImport.update({
+  id: '/charms',
+  path: '/charms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pulseras'
+  fullPaths: '/' | '/charms' | '/pulseras'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pulseras'
-  id: '__root__' | '/' | '/pulseras'
+  to: '/' | '/charms' | '/pulseras'
+  id: '__root__' | '/' | '/charms' | '/pulseras'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CharmsRoute: typeof CharmsRoute
   PulserasRoute: typeof PulserasRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/pulseras'
       fullPath: '/pulseras'
       preLoaderRoute: typeof PulserasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/charms': {
+      id: '/charms'
+      path: '/charms'
+      fullPath: '/charms'
+      preLoaderRoute: typeof CharmsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CharmsRoute: CharmsRoute,
   PulserasRoute: PulserasRoute,
 }
 export const routeTree = rootRouteImport
