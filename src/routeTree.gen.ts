@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PulserasRouteImport } from './routes/pulseras'
 import { Route as PendientesRouteImport } from './routes/pendientes'
 import { Route as CollaresRouteImport } from './routes/collares'
+import { Route as ColeccionesRouteImport } from './routes/colecciones'
 import { Route as CharmsRouteImport } from './routes/charms'
 import { Route as AnillosRouteImport } from './routes/anillos'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const PendientesRoute = PendientesRouteImport.update({
 const CollaresRoute = CollaresRouteImport.update({
   id: '/collares',
   path: '/collares',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColeccionesRoute = ColeccionesRouteImport.update({
+  id: '/colecciones',
+  path: '/colecciones',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CharmsRoute = CharmsRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
+  '/colecciones': typeof ColeccionesRoute
   '/collares': typeof CollaresRoute
   '/pendientes': typeof PendientesRoute
   '/pulseras': typeof PulserasRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
+  '/colecciones': typeof ColeccionesRoute
   '/collares': typeof CollaresRoute
   '/pendientes': typeof PendientesRoute
   '/pulseras': typeof PulserasRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
+  '/colecciones': typeof ColeccionesRoute
   '/collares': typeof CollaresRoute
   '/pendientes': typeof PendientesRoute
   '/pulseras': typeof PulserasRoute
@@ -78,16 +87,25 @@ export interface FileRouteTypes {
     | '/'
     | '/anillos'
     | '/charms'
+    | '/colecciones'
     | '/collares'
     | '/pendientes'
     | '/pulseras'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/anillos' | '/charms' | '/collares' | '/pendientes' | '/pulseras'
+  to:
+    | '/'
+    | '/anillos'
+    | '/charms'
+    | '/colecciones'
+    | '/collares'
+    | '/pendientes'
+    | '/pulseras'
   id:
     | '__root__'
     | '/'
     | '/anillos'
     | '/charms'
+    | '/colecciones'
     | '/collares'
     | '/pendientes'
     | '/pulseras'
@@ -97,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnillosRoute: typeof AnillosRoute
   CharmsRoute: typeof CharmsRoute
+  ColeccionesRoute: typeof ColeccionesRoute
   CollaresRoute: typeof CollaresRoute
   PendientesRoute: typeof PendientesRoute
   PulserasRoute: typeof PulserasRoute
@@ -123,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/collares'
       fullPath: '/collares'
       preLoaderRoute: typeof CollaresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/colecciones': {
+      id: '/colecciones'
+      path: '/colecciones'
+      fullPath: '/colecciones'
+      preLoaderRoute: typeof ColeccionesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/charms': {
@@ -153,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnillosRoute: AnillosRoute,
   CharmsRoute: CharmsRoute,
+  ColeccionesRoute: ColeccionesRoute,
   CollaresRoute: CollaresRoute,
   PendientesRoute: PendientesRoute,
   PulserasRoute: PulserasRoute,
