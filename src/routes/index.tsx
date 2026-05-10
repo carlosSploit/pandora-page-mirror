@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart, Search, MapPin, User, ShoppingBag, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Heart, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import b1 from "@/assets/bracelet-1.jpg";
 import b2 from "@/assets/bracelet-2.jpg";
@@ -57,27 +57,10 @@ function PulserasPage() {
 
       {/* Header */}
       <header className="border-b border-border">
-        <div className="max-w-[1600px] mx-auto px-6 py-5 flex items-center justify-between gap-8">
+        <div className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center">
           <a href="/" className="font-display text-3xl tracking-[0.25em] font-medium">
             PANDORA
           </a>
-          <div className="flex-1 max-w-xl">
-            <div className="flex items-center gap-3 border border-border rounded-sm px-4 py-2.5 hover:border-foreground/40 transition">
-              <Search size={18} className="text-muted-foreground" />
-              <input
-                type="text"
-                placeholder="Buscar"
-                aria-label="Buscar"
-                className="bg-transparent outline-none flex-1 text-sm"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-5 text-foreground">
-            <button aria-label="Favoritos" className="hover:text-pandora-pink transition"><Heart size={20} /></button>
-            <button aria-label="Tienda" className="hover:text-pandora-pink transition"><MapPin size={20} /></button>
-            <button aria-label="Cuenta" className="hover:text-pandora-pink transition"><User size={20} /></button>
-            <button aria-label="Bolsa" className="hover:text-pandora-pink transition"><ShoppingBag size={20} /></button>
-          </div>
         </div>
         <nav className="max-w-[1600px] mx-auto px-6 pb-3">
           <ul className="flex items-center justify-between flex-wrap gap-x-6 gap-y-2 text-[13px] tracking-wide">
