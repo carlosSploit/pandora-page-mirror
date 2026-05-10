@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart, Search, MapPin, User, ShoppingBag, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Heart, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import b1 from "@/assets/bracelet-1.jpg";
 import b2 from "@/assets/bracelet-2.jpg";
