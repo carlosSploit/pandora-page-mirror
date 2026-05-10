@@ -162,27 +162,6 @@ function PulserasPage() {
   );
 }
 
-function Tabs() {
-  const [tab, setTab] = useState<"insp" | "shop">("shop");
-  return (
-    <div className="border-b border-border">
-      <div className="max-w-[1600px] mx-auto px-6 flex gap-8 text-xs tracking-widest">
-        <button
-          onClick={() => setTab("insp")}
-          className={`py-4 border-b-2 transition ${tab === "insp" ? "border-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
-        >
-          INSPIRACIÓN
-        </button>
-        <button
-          onClick={() => setTab("shop")}
-          className={`py-4 border-b-2 transition ${tab === "shop" ? "border-foreground" : "border-transparent text-muted-foreground hover:text-foreground"}`}
-        >
-          COMPRAR <span className="ml-1 text-muted-foreground">145</span>
-        </button>
-      </div>
-    </div>
-  );
-}
 
 function ProductCard({ name, price, img, tag }: { name: string; price: string; img: string; tag: string }) {
   const [fav, setFav] = useState(false);
