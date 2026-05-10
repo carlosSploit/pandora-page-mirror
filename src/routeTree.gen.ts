@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PulserasRouteImport } from './routes/pulseras'
 import { Route as CharmsRouteImport } from './routes/charms'
+import { Route as AnillosRouteImport } from './routes/anillos'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PulserasRoute = PulserasRouteImport.update({
@@ -23,6 +24,11 @@ const CharmsRoute = CharmsRouteImport.update({
   path: '/charms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnillosRoute = AnillosRouteImport.update({
+  id: '/anillos',
+  path: '/anillos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/anillos': typeof AnillosRoute
   '/charms': typeof CharmsRoute
   '/pulseras': typeof PulserasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/charms' | '/pulseras'
+  fullPaths: '/' | '/anillos' | '/charms' | '/pulseras'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/charms' | '/pulseras'
-  id: '__root__' | '/' | '/charms' | '/pulseras'
+  to: '/' | '/anillos' | '/charms' | '/pulseras'
+  id: '__root__' | '/' | '/anillos' | '/charms' | '/pulseras'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnillosRoute: typeof AnillosRoute
   CharmsRoute: typeof CharmsRoute
   PulserasRoute: typeof PulserasRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CharmsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/anillos': {
+      id: '/anillos'
+      path: '/anillos'
+      fullPath: '/anillos'
+      preLoaderRoute: typeof AnillosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnillosRoute: AnillosRoute,
   CharmsRoute: CharmsRoute,
   PulserasRoute: PulserasRoute,
 }
