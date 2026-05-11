@@ -42,13 +42,13 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      <div className="bg-pandora-pink-soft text-foreground text-center text-sm py-3 px-4">
+      {/* <div className="bg-pandora-pink-soft text-foreground text-center text-sm py-3 px-4">
         <a href="#" className="underline underline-offset-4 font-medium">
           2 charms + pulsera desde 86€
         </a>
-      </div>
+      </div> */}
 
-      <header className="border-b border-border">
+      <header style={{borderColor: "#ffa6ad"}} className="border-b border-border">
         <div className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center">
           <Link to="/" className="font-display text-3xl tracking-[0.25em] font-medium">
             PANDORA
@@ -62,6 +62,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
                 <li key={item.to}>
                   <Link
                     to={item.to}
+                    style={{borderColor: `${active? "#ffa6ad": "#fff"}`}}
                     className={`py-2 inline-block border-b-2 ${
                       active ? "border-foreground font-medium" : "border-transparent hover:border-foreground/40"
                     } transition`}
@@ -78,26 +79,15 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       <div className="max-w-[1600px] mx-auto px-6 pt-6 text-xs text-muted-foreground">
         <Link to="/" className="hover:underline">Inicio</Link>
         <span className="mx-2">/</span>
-        <span className="text-foreground">{title}</span>
+        <span style={{color: "#ffa6ad"}} className="text-foreground">{title}</span>
       </div>
 
-      <section className="max-w-[1600px] mx-auto px-6 pt-6 pb-10 grid md:grid-cols-2 gap-10 items-start">
-        <div>
+      <section className="max-w-[1600px] mx-auto px-6 pt-6 pb-10 grid md:grid-cols-1 gap-10 items-start ">
+        <div className="max-w-[1600px] flex flex-col content-center items-center">
           <h1 className="font-display text-5xl md:text-6xl tracking-wide uppercase">{title}</h1>
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground max-w-md">
             {description}
-            <a href="#" className="block mt-2 text-foreground underline underline-offset-4">Más</a>
           </p>
-        </div>
-        <div className="grid grid-cols-4 gap-4 md:gap-6">
-          {categories.map((c) => (
-            <a key={c.label} href="#" className="group flex flex-col items-center text-center">
-              <div className="w-full aspect-square rounded-full bg-secondary overflow-hidden flex items-center justify-center transition group-hover:bg-pandora-pink-soft/40">
-                <img src={c.img} alt={c.label} loading="lazy" width={400} height={400} className="w-[78%] h-[78%] object-contain" />
-              </div>
-              <span className="mt-3 text-[11px] font-medium tracking-widest leading-tight">{c.label}</span>
-            </a>
-          ))}
         </div>
       </section>
 
@@ -119,31 +109,14 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
             <ProductCard key={p.name} {...p} />
           ))}
         </div>
-        <div className="mt-12 flex justify-center">
+        {/* <div className="mt-12 flex justify-center">
           <button className="border border-foreground px-10 py-3 text-xs tracking-[0.2em] hover:bg-foreground hover:text-background transition">
             CARGAR MÁS
           </button>
-        </div>
+        </div> */}
       </section>
 
       <footer className="border-t border-border mt-10">
-        <div className="max-w-[1600px] mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm">
-          {[
-            { t: "AYUDA", l: ["Contacto", "Envíos", "Devoluciones", "Cuidado de las joyas"] },
-            { t: "PANDORA", l: ["Sobre Pandora", "Sostenibilidad", "Carreras", "Inversores"] },
-            { t: "MI CUENTA", l: ["Iniciar sesión", "Crear cuenta", "Pedidos", "Lista de deseos"] },
-            { t: "TIENDAS", l: ["Encuentra una tienda", "Reserva en tienda"] },
-          ].map((col) => (
-            <div key={col.t}>
-              <h3 className="font-medium tracking-widest text-xs mb-4">{col.t}</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                {col.l.map((x) => (
-                  <li key={x}><a href="#" className="hover:text-foreground transition">{x}</a></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
         <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} Pandora Jewelry — Réplica de demostración
         </div>
