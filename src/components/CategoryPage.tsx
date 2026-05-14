@@ -18,7 +18,7 @@ export const NAV_ITEMS = [
   { label: "Anillos", to: "/anillos" as const },
   { label: "Pendientes", to: "/pendientes" as const },
   { label: "Collares", to: "/collares" as const },
-  { label: "Colecciones", to: "/colecciones" as const },
+  // { label: "Colecciones", to: "/colecciones" as const },
 ];
 
 export type CategoryProps = {
@@ -102,6 +102,13 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       price: `S/.304 - xgr 380`,
       type: "Anillos",
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778793451/aca5e6ca-c9dc-4127-b914-c40e03c96307_wpfrnk.png",
+      tag: tags[8],
+    },
+    {
+      name: `Dije Crucifijo`,
+      price: `S/.1950 - xgr 390`,
+      type: "Charms",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778793746/7498107b-3e3c-471d-9cd6-591b8f3a93b6_wnpqlq.png",
       tag: tags[8],
     },
   ]
