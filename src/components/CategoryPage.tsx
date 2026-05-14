@@ -96,7 +96,11 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
       <header style={{borderColor: "#ffa6ad"}} className="border-b border-border">
         <div className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center text-center">
-          <Link to="/" className="font-display text-2xl md:text-4xl tracking-[0.3em] font-medium leading-none">
+          <Link
+            to="/"
+            className="font-display text-2xl md:text-4xl tracking-[0.3em] font-medium leading-none bg-clip-text text-transparent"
+            style={{ backgroundImage: "linear-gradient(90deg, #c9a36a 0%, #e6b89c 40%, #d98a8a 70%, #b8794f 100%)" }}
+          >
             AUREA&nbsp;LUMINERE
           </Link>
         </div>
