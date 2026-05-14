@@ -88,7 +88,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      {/* <div className="bg-pandora-pink-soft text-foreground text-center text-sm py-3 px-4">
+      {/* <div className="bg-aurea luminere-pink-soft text-foreground text-center text-sm py-3 px-4">
         <a href="#" className="underline underline-offset-4 font-medium">
           2 charms + pulsera desde 86€
         </a>
@@ -143,11 +143,11 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
       <div className="border-b border-border">
         <div className="max-w-[1600px] mx-auto px-6 py-4 flex items-center justify-between text-xs tracking-widest">
-          <button className="flex items-center gap-2 hover:text-pandora-pink transition">
+          <button className="flex items-center gap-2 hover:text-aurea luminere-pink transition">
             <SlidersHorizontal size={16} />
             FILTRAR Y ORDENAR
           </button>
-          <button className="hidden md:flex items-center gap-1.5 hover:text-pandora-pink transition">
+          <button className="hidden md:flex items-center gap-1.5 hover:text-aurea luminere-pink transition">
             ORDENAR POR <ChevronDown size={14} />
           </button>
         </div>
@@ -168,7 +168,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
       <footer className="border-t border-border mt-10">
         <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Pandora Jewelry — Réplica de demostración
+          © {new Date().getFullYear()} Aurea Luminere — Réplica de demostración
         </div>
       </footer>
     </div>
@@ -186,7 +186,7 @@ function ProductCard({ name, price, img, tag }: { name: string; price: string; i
       >
         <Heart
           size={20}
-          className={fav ? "fill-pandora-pink text-pandora-pink" : "text-foreground/60 group-hover:text-foreground"}
+          className={fav ? "fill-aurea luminere-pink text-aurea luminere-pink" : "text-foreground/60 group-hover:text-foreground"}
         />
       </button>
       <a href="#" className="block aspect-square overflow-hidden bg-white">

@@ -4,18 +4,18 @@ import { CategoryPage } from "@/components/CategoryPage";
 export const Route = createFileRoute("/colecciones")({
   head: () => ({
     meta: [
-      { title: "Colecciones | Pandora ES" },
-      { name: "description", content: "Explora todas las colecciones de joyas Pandora." },
-      { property: "og:title", content: "Colecciones | Pandora" },
-      { property: "og:description", content: "Descubre las colecciones más icónicas de Pandora." },
+      { title: "Colecciones | Aurea Luminere" },
+      { name: "description", content: "Explora todas las colecciones de joyas Aurea Luminere." },
+      { property: "og:title", content: "Colecciones | Aurea Luminere" },
+      { property: "og:description", content: "Descubre las colecciones más icónicas de Aurea Luminere." },
     ],
   }),
   component: () => (
     <CategoryPage
       title="Colecciones"
-      description="Explora las colecciones más icónicas de Pandora: Moments, ME, Timeless, Disney y mucho más."
-      productPrefix="Pieza Pandora"
-      highlights={["PANDORA MOMENTS", "PANDORA ME", "PANDORA TIMELESS", "PANDORA DISNEY"]}
+      description="Explora las colecciones más icónicas de Aurea Luminere: Moments, ME, Timeless, Disney y mucho más."
+      productPrefix="Pieza Aurea Luminere"
+      highlights={["AUREA LUMINERE MOMENTS", "AUREA LUMINERE ME", "AUREA LUMINERE TIMELESS", "AUREA LUMINERE DISNEY"]}
     />
   ),
 });
