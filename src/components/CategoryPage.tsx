@@ -38,6 +38,15 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
     tag: ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa"][i],
   }));
 
+  const tags = ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa"];
+
+  const products1 =  {
+    name: `Cadena con piedras Nacar`,
+    price: `00 €`,
+    type: "Collares",
+    img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778510524/8c9653e4-7112-4cca-adbc-628dcb06af58_ckulp9.png",
+    tag: tags[2],
+  }
   const categories = highlights.map((label, i) => ({ label, img: IMAGES[i % IMAGES.length] }));
 
   return (
