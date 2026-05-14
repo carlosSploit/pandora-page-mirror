@@ -76,10 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Descubre la colección de pulseras Aurea Luminere: pulseras para charms, rígidas, tennis y más. Joyas artesanales con estilo único." },
       { name: "author", content: "Aurea Luminere" },
       { property: "og:title", content: "Pulseras | Aurea Luminere" },
-      { property: "og:description", content: "Potencia tu look con las pulseras de Aurea Luminere." },
+      { property: "og:description", content: "Descubre la colección de pulseras Aurea Luminere: pulseras para charms, rígidas, tennis y más. Joyas artesanales con estilo único." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Pulseras | Aurea Luminere" },
+      { name: "twitter:description", content: "Descubre la colección de pulseras Aurea Luminere: pulseras para charms, rígidas, tennis y más. Joyas artesanales con estilo único." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5cd96ea1-2ab7-4dd0-ac67-fbeb99051dad/id-preview-3ea1c4a5--ee303948-97c3-43a2-b926-fffa6578e52f.lovable.app-1778787387541.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5cd96ea1-2ab7-4dd0-ac67-fbeb99051dad/id-preview-3ea1c4a5--ee303948-97c3-43a2-b926-fffa6578e52f.lovable.app-1778787387541.png" },
     ],
     links: [
       {
