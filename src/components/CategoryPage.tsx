@@ -40,13 +40,29 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
   const tags = ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa"];
 
-  const products1 =  {
-    name: `Cadena con piedras Nacar`,
-    price: `00 €`,
-    type: "Collares",
-    img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778510524/8c9653e4-7112-4cca-adbc-628dcb06af58_ckulp9.png",
-    tag: tags[2],
-  }
+  const products1 =  [
+    {
+      name: `Cadena con piedras Nacar`,
+      price: `00 €`,
+      type: "Collares",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778510524/8c9653e4-7112-4cca-adbc-628dcb06af58_ckulp9.png",
+      tag: tags[2],
+    },
+    {
+      name: `Cadena de oro`,
+      price: `00 €`,
+      type: "Collares",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778509791/195ae11a-f893-4154-8038-522fd917ab5a_jq52mo.png",
+      tag: tags[2],
+    },
+    {
+      name: `Pulsera con pierdras de Nacar`,
+      price: `00 €`,
+      type: "Pulseras",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778510504/c9fb4846-5450-483b-bf93-b5f1a6afcd3f_gelzve.png",
+      tag: tags[2],
+    },
+  ]
   const categories = highlights.map((label, i) => ({ label, img: IMAGES[i % IMAGES.length] }));
 
   return (
@@ -114,7 +130,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
       <section className="max-w-[1600px] mx-auto px-2 md:px-6 py-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6">
-          {products.map((p) => (
+          {products1.filter((fi) => fi.type === title).map((p) => (
             <ProductCard key={p.name} {...p} />
           ))}
         </div>
