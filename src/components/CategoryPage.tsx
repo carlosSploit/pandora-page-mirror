@@ -83,6 +83,27 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778785800/ChatGPT_Image_14_may_2026_14_07_32_k28qz4.png",
       tag: tags[8],
     },
+    {
+      name: `Aretes`,
+      price: `S/.1014 - xgr 390`,
+      type: "Pendientes",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778790307/f7e11c28-3343-4063-8949-a43693bd148f_ytd2ne.png",
+      tag: tags[8],
+    },
+    {
+      name: `Sortija Chavin`,
+      price: `S/.4400 - xgr 400`,
+      type: "Pendientes",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778790307/f7e11c28-3343-4063-8949-a43693bd148f_ytd2ne.png",
+      tag: tags[8],
+    },
+    {
+      name: `Sortija`,
+      price: `S/.304 - xgr 380`,
+      type: "Pendientes",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778790307/f7e11c28-3343-4063-8949-a43693bd148f_ytd2ne.png",
+      tag: tags[8],
+    },
   ]
   const categories = highlights.map((label, i) => ({ label, img: IMAGES[i % IMAGES.length] }));
 
