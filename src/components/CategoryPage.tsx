@@ -93,14 +93,14 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
     {
       name: `Sortija Chavin`,
       price: `S/.4400 - xgr 400`,
-      type: "Pendientes",
+      type: "Anillos",
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778790307/f7e11c28-3343-4063-8949-a43693bd148f_ytd2ne.png",
       tag: tags[8],
     },
     {
       name: `Sortija`,
       price: `S/.304 - xgr 380`,
-      type: "Pendientes",
+      type: "Anillos",
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778790307/f7e11c28-3343-4063-8949-a43693bd148f_ytd2ne.png",
       tag: tags[8],
     },
