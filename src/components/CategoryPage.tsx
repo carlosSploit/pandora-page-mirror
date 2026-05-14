@@ -38,7 +38,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
     tag: ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa"][i],
   }));
 
-  const tags = ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa"];
+  const tags = ["Plata 925", "Oro 14k", "Tela / Plata", "Plata · Pavé", "Plata 925", "Plata · Circonita", "Plata 925", "Oro rosa","Oro 18k"];
 
   const products1 =  [
     {
@@ -61,6 +61,27 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       type: "Pulseras",
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778510504/c9fb4846-5450-483b-bf93-b5f1a6afcd3f_gelzve.png",
       tag: tags[2],
+    },
+    {
+      name: `Sortija`,
+      price: `S/.1232 - xgr 385`,
+      type: "Anillos",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778784173/8c32a834-8d11-4e67-91e7-842d6a238ae9_tkbh2p.png",
+      tag: tags[8],
+    },
+    {
+      name: `Sortija`,
+      price: `S/.546 - xgr 390`,
+      type: "Anillos",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778785800/ChatGPT_Image_14_may_2026_14_07_32324_ywuql0.png",
+      tag: tags[8],
+    },
+    {
+      name: `Sortija`,
+      price: `S/.507 - xgr 390`,
+      type: "Anillos",
+      img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778785800/ChatGPT_Image_14_may_2026_14_07_32_k28qz4.png",
+      tag: tags[8],
     },
   ]
   const categories = highlights.map((label, i) => ({ label, img: IMAGES[i % IMAGES.length] }));
