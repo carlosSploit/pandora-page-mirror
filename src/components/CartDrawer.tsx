@@ -26,7 +26,7 @@ export function CartDrawer() {
                     <p className="text-sm line-clamp-2">{it.name}</p>
                     <p className="text-xs text-muted-foreground mt-1">{it.price}</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <button
+                      {/* <button
                         aria-label="Restar"
                         onClick={() => updateQty(it.id, it.qty - 1)}
                         className="p-1 border rounded hover:bg-accent"
@@ -40,7 +40,7 @@ export function CartDrawer() {
                         className="p-1 border rounded hover:bg-accent"
                       >
                         <Plus size={12} />
-                      </button>
+                      </button> */}
                       <button
                         aria-label="Eliminar"
                         onClick={() => removeItem(it.id)}
@@ -65,7 +65,7 @@ export function CartDrawer() {
               VACIAR CARRITO
             </button>
             <button className="w-full text-xs tracking-widest bg-foreground text-background py-3 hover:opacity-90 transition">
-              FINALIZAR COMPRA
+              FINALIZAR CONSULTA
             </button>
           </SheetFooter>
         )}
