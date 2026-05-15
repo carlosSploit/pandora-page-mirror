@@ -49,11 +49,11 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       tag: tags[2],
     },
     {
-      name: `Cadena de oro`,
-      price: `00 €`,
+      name: `Gargantilla`,
+      price: `S/.4658 - xgr 385`,
       type: "Collares",
       img : "https://res.cloudinary.com/dhxefh3r2/image/upload/v1778509791/195ae11a-f893-4154-8038-522fd917ab5a_jq52mo.png",
-      tag: tags[2],
+      tag: tags[8],
     },
     {
       name: `Pulsera con pierdras de Nacar`,
