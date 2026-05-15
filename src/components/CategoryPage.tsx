@@ -205,8 +205,9 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
 
 function ProductCard({ name, price, img, tag }: { name: string; price: string; img: string; tag: string }) {
   const [fav, setFav] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
-    <article className="group relative bg-secondary/40">
+    <div className="group relative bg-secondary/40">
       <button
         onClick={() => setFav((v) => !v)}
         aria-label="Añadir a favoritos"
@@ -217,21 +218,34 @@ function ProductCard({ name, price, img, tag }: { name: string; price: string; i
           className={fav ? "fill-aurea luminere-pink text-aurea luminere-pink" : "text-foreground/60 group-hover:text-foreground"}
         />
       </button>
-      <a href="#" className="block aspect-square overflow-hidden bg-white">
+      <div className="block aspect-square overflow-hidden bg-white">
         <img
           src={img}
           alt={name}
+          onClick={() => setOpen(true)}
           loading="lazy"
           width={800}
           height={800}
           className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
         />
-      </a>
+      </div>
       <div className="px-3 md:px-4 py-4">
         <p className="text-[11px] tracking-widest text-muted-foreground uppercase">{tag}</p>
         <h3 className="mt-1.5 text-sm leading-snug line-clamp-2 min-h-[2.6em]">{name}</h3>
         <p className="mt-2 text-sm font-medium">{price}</p>
       </div>
-    </article>
+       {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+        >
+          <img
+            src={img}
+            alt={name}
+            className="max-w-[90%] max-h-[90%]"
+          />
+        </div>
+        )}
+    </div>
   );
 }
