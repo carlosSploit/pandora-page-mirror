@@ -129,7 +129,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
             <img
               src={logo}
               alt="Aurea Luminere"
-              className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto object-contain"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
             />
           </Link>
         </div>
