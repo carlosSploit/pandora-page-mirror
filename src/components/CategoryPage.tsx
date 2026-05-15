@@ -125,7 +125,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       </div> */}
 
       <header style={{borderColor: "#ffa6ad"}} className="border-b border-border">
-        <div className="max-w-[1600px] mx-auto px-4 py-4 md:py-6 flex items-center justify-center">
+        <div className="max-w-[1600px] mx-auto px-4 py-4 md:py-6 flex items-center justify-center relative">
           <Link to="/" className="block">
             <img
               src={logo}
@@ -133,6 +133,7 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
               className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
             />
           </Link>
+          <CartButton />
         </div>
         <nav className="max-w-[1600px] mx-auto px-6 pb-3">
           <ul className="flex items-center justify-center flex-wrap gap-x-8 gap-y-2 text-[13px] tracking-wide">
@@ -205,9 +206,32 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
   );
 }
 
+function CartButton() {
+  const { count, setOpen } = useCart();
+  return (
+    <button
+      onClick={() => setOpen(true)}
+      aria-label="Abrir carrito"
+      className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:opacity-70 transition"
+    >
+      <ShoppingBag size={22} />
+      {count > 0 && (
+        <span
+          style={{ backgroundColor: "#ffa6ad" }}
+          className="absolute -top-0.5 -right-0.5 text-[10px] text-white rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center font-medium"
+        >
+          {count}
+        </span>
+      )}
+    </button>
+  );
+}
+
 function ProductCard({ name, price, img, tag }: { name: string; price: string; img: string; tag: string }) {
   const [fav, setFav] = useState(false);
   const [open, setOpen] = useState(false);
+  const { addItem } = useCart();
+  const handleAdd = () => addItem({ id: name, name, price, img });
   return (
     <div className="group relative bg-secondary/40">
       <button
@@ -228,15 +252,24 @@ function ProductCard({ name, price, img, tag }: { name: string; price: string; i
           loading="lazy"
           width={800}
           height={800}
-          className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
+          className="w-full h-full object-contain transition duration-500 group-hover:scale-105 cursor-zoom-in"
         />
       </div>
-      <div className="px-3 md:px-4 py-4">
+      <button
+        onClick={handleAdd}
+        className="w-full text-left px-3 md:px-4 py-4 hover:bg-secondary/70 transition"
+      >
         <p className="text-[11px] tracking-widest text-muted-foreground uppercase">{tag}</p>
         <h3 className="mt-1.5 text-sm leading-snug line-clamp-2 min-h-[2.6em]">{name}</h3>
         <p className="mt-2 text-sm font-medium">{price}</p>
-      </div>
-       {open && (
+        <span
+          style={{ borderColor: "#ffa6ad", color: "#ffa6ad" }}
+          className="mt-3 inline-block text-[10px] tracking-[0.2em] border px-3 py-1.5"
+        >
+          AÑADIR AL CARRITO
+        </span>
+      </button>
+      {open && (
         <div
           onClick={() => setOpen(false)}
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
@@ -247,7 +280,7 @@ function ProductCard({ name, price, img, tag }: { name: string; price: string; i
             className="max-w-[90%] max-h-[90%]"
           />
         </div>
-        )}
+      )}
     </div>
   );
 }
