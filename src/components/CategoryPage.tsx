@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { Heart, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Heart, SlidersHorizontal, ChevronDown, ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 import logo from "@/assets/aurea-luminere-logo.png";
 import b1 from "@/assets/bracelet-1.jpg";
 import b2 from "@/assets/bracelet-2.jpg";
