@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { Heart, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/aurea-luminere-logo.png";
 import b1 from "@/assets/bracelet-1.jpg";
 import b2 from "@/assets/bracelet-2.jpg";
 import b3 from "@/assets/bracelet-3.jpg";
@@ -123,13 +124,13 @@ export function CategoryPage({ title, description, productPrefix, highlights }: 
       </div> */}
 
       <header style={{borderColor: "#ffa6ad"}} className="border-b border-border">
-        <div className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center text-center">
-          <Link
-            to="/"
-            className="font-display text-2xl md:text-4xl tracking-[0.3em] font-medium leading-none bg-clip-text text-transparent"
-            style={{ backgroundImage: "linear-gradient(90deg, #c9a36a 0%, #e6b89c 40%, #d98a8a 70%, #b8794f 100%)" }}
-          >
-            AUREA&nbsp;LUMINERE
+        <div className="max-w-[1600px] mx-auto px-4 py-4 md:py-6 flex items-center justify-center">
+          <Link to="/" className="block">
+            <img
+              src={logo}
+              alt="Aurea Luminere"
+              className="h-20 sm:h-28 md:h-36 lg:h-40 w-auto object-contain"
+            />
           </Link>
         </div>
         <nav className="max-w-[1600px] mx-auto px-6 pb-3">
